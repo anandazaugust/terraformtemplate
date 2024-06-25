@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     name: terraform_plan_job
     # environment: dev
-    needs: terraform_validate_job
+    needs: terra_validate
     
     steps:
      - name: Checkout
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     name: terraform_apply_job
     environment: dev
-    needs: terraform_plan_job
+    needs: terra_plan
     
     steps:
      - name: Checkout
