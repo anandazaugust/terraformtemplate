@@ -41,6 +41,7 @@ jobs:
   terra_validate: 
     runs-on: ubuntu-latest
     name: terraform_validate_job
+    needs: azure_login
     # environment: dev
     steps:
 
@@ -56,6 +57,7 @@ jobs:
   terra_plan: 
     runs-on: ubuntu-latest
     name: terraform_plan_job
+    
     # environment: dev
     needs: terra_validate
     
